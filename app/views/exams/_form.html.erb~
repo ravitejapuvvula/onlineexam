@@ -1,0 +1,27 @@
+<%= form_for(@exam) do |f| %>
+  <% if @exam.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@exam.errors.count, "error") %> prohibited this exam from being saved:</h2>
+
+      <ul>
+      <% @exam.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br />
+    <%#= countdown Time.now + 20,ni=%>
+
+  </div>
+    <%= f.fields_for :questions do |builder| %>
+        <%= render "question_fields", :f => builder %>
+    <% end %>
+    <p><%= f.submit "Submit" %></p>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

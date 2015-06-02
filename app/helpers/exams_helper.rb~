@@ -1,0 +1,5 @@
+module ExamsHelper
+
+check_box (object_name, method, options = {}, checked_value = "1")
+
+end

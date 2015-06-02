@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @exam.name %>
+</p>
+
+<% @question.each do |question| %>
+
+<tr>
+  <td><%= question.cotent %></td> <br />
+
+    <% question.answers.each do |answer| %>
+
+   <input type="radio" id="post_category" name="post[category]" 
+                    value="rails"  />
+
+      <td><%= answer.content %></td> <br/>
+
+     <br/>
+
+    <%end%>
+</tr>
+
+ <%end%>
+
+<%= link_to 'Edit', edit_exam_path(@exam) %> | 
+<%= link_to 'Back', exams_path %>
+
+

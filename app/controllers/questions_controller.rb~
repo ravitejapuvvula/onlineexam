@@ -1,0 +1,7 @@
+class QuestionsController < ApplicationController
+  def ques
+  end
+ def show
+    @question=Question.find(params[:question_id])
+  end
+end
